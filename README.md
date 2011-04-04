@@ -43,7 +43,7 @@ and set your namespace for your site:
   namespace = 'Loggly'
 </pre>
 
-### Defining Searches
+## Defining Searches
 You'll need to configure a set of searches you want to run from Loggly.  Change 'default' to the Loggly input you want to search if it's.  
 
 The example below gets counts of events matching the wildcard search for a five minute window starting six minutes ago for the default input.  Obviously this input needs to be receiving data from your web server to work.
@@ -53,7 +53,7 @@ The example below gets counts of events matching the wildcard search for a five 
   num_results = account_name.facets(q='*', starttime='NOW-6MINUTES', endtime='NOW-1MINUTE', buckets=1)['data'].items()[0][1]
 </pre>
 
-### Running
+## Running
 Run the code to test it.
 <pre>
   python main.py
@@ -67,5 +67,10 @@ Now set it up as a cron job:
 </pre>
 
 You should get custom data flowing into your CloudWatch account after about 5-10 minutes.  Adjust your timeframes and cronjob as necessary, and add more searches for other use cases.
+
+## Results
+Here's a sample output from a run over 12 hours or so, tracking total web log entries on the loggly.com website.
+
+<img src="http://github.com/loggly/loggly-watch/blob/master/cloudwatch.png?raw=true">
 
 To graph the data on your own dashboard, use [Micahel Babineau's CloudViz package](https://github.com/mbabineau/cloudviz).
