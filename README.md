@@ -71,6 +71,6 @@ You should get custom data flowing into your CloudWatch account after about 5-10
 ## Results
 Here's a sample output from a run over 12 hours or so, tracking total web log entries on the loggly.com website.
 
-<img src="http://github.com/loggly/loggly-watch/blob/master/cloudwatch.png?raw=true">
+<img src="https://github.com/loggly/loggly-watch/raw/master/cloudwatch.png">
 
 To graph the data on your own dashboard, use [Micahel Babineau's CloudViz package](https://github.com/mbabineau/cloudviz).
