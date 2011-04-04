@@ -44,7 +44,7 @@ and set your namespace for your site:
 </pre>
 
 ## Defining Searches
-You'll need to configure a set of searches you want to run from Loggly.  Change 'default' to the Loggly input you want to search if it's.  
+You'll need to configure a set of searches you want to run from Loggly.  Change 'default' to the Loggly input you want to search.  
 
 The example below gets counts of events matching the wildcard search for a five minute window starting six minutes ago for the default input.  Obviously this input needs to be receiving data from your web server to work.
 
