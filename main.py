@@ -24,6 +24,7 @@ num_results = geekceo.facets(q='GET AND 404', starttime='NOW-6MINUTES', endtime=
 # push it to cloudwatch
 cw.putData(namespace, "404Count", num_results)
 
-
+# print to stdout, which is then piped to logger by cron (you could also just log from here using HTTP via hoover)
+print 'cloudwatch: finished run'
 
 
