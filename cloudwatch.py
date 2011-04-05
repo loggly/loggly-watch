@@ -24,7 +24,6 @@ def getSignedURL(key, secret_key, action, parms):
 
     # sign, encode and quote the entire request string
     string_to_sign = "GET\n%s\n/\n%s" % (base_url, url_string)
-    print string_to_sign
     signature = hmac.new( key=secret_key, msg=string_to_sign, digestmod=hashlib.sha256).digest()
     signature = base64.encodestring(signature).strip()
     urlencoded_signature = quote_plus(signature)
@@ -43,4 +42,3 @@ class connection:
         foo = getSignedURL(self.key, self.secret_key, 'PutMetricData', {'Namespace': namespace, 'MetricData.member.1.MetricName': metricname, 'MetricData.member.1.Value': value})
         h = httplib2.Http()
         resp, content = h.request(foo)
-        print content
